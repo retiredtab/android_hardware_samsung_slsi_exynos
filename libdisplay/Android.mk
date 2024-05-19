@@ -42,7 +42,10 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils \
 	$(TOP)/hardware/samsung_slsi/exynos/libmpp \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcmodule \
-	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule
+	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule \
+	frameworks/native/opengl/include \
+	hardware/libhardware/include \
+	hardware/libhardware_legacy/include
 
 LOCAL_ADDITIONAL_DEPENDENCIES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
@@ -54,6 +57,7 @@ LOCAL_SRC_FILES := \
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libdisplaymodule/Android.mk
 
 LOCAL_MODULE := libexynosdisplay
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

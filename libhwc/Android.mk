@@ -106,7 +106,9 @@ LOCAL_C_INCLUDES += \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libdisplaymodule \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhdmimodule \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule \
-	$(TOP)/hardware/samsung_slsi/exynos/libmpp
+	$(TOP)/hardware/samsung_slsi/exynos/libmpp \
+	frameworks/native/opengl/include \
+	hardware/libhardware/include
 
 ifeq ($(BOARD_USES_VPP), true)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay
@@ -121,6 +123,7 @@ LOCAL_SRC_FILES := ExynosHWC.cpp
 
 LOCAL_MODULE := hwcomposer.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

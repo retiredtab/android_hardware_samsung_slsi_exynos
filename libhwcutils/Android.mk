@@ -47,7 +47,10 @@ LOCAL_C_INCLUDES := \
 	$(TOP)/hardware/samsung_slsi/exynos/libexynosutils \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcmodule \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule \
-	$(TOP)/hardware/samsung_slsi/exynos/libmpp
+	$(TOP)/hardware/samsung_slsi/exynos/libmpp \
+	frameworks/native/opengl/include \
+	hardware/libhardware/include \
+	hardware/libhardware_legacy/include
 
 ifeq ($(BOARD_USES_VPP), true)
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../libvppdisplay
@@ -103,6 +106,7 @@ endif
 include $(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/libhwcutilsmodule/Android.mk
 
 LOCAL_MODULE := libhwcutils
+LOCAL_VENDOR_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

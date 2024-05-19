@@ -11,7 +11,9 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include \
 	$(TOP)/hardware/samsung_slsi/exynos/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
-	$(TOP)/system/core/libion/include
+	$(TOP)/system/core/libion/include \
+	system/core/libutils/include \
+	system/logging/liblog/include
 
 LOCAL_HEADER_LIBRARIES := generated_kernel_headers
 
@@ -76,6 +78,7 @@ endif
 LOCAL_SHARED_LIBRARIES = libion
 
 LOCAL_MODULE := libExynosVideoApi
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm

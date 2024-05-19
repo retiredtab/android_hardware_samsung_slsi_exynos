@@ -15,13 +15,15 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include \
+	system/core/libcutils/include \
+	system/logging/liblog/include
 
 LOCAL_SRC_FILES:= \
 	libion.cpp
 
 LOCAL_MODULE := libion_exynos
-
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk

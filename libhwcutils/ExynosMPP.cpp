@@ -54,7 +54,6 @@ ExynosMPP::ExynosMPP(ExynosDisplay *display, int gscIndex)
     mDoubleOperation = false;
     mBufferFreeThread = new BufferFreeThread(this);
     mBufferFreeThread->mRunning = true;
-    mBufferFreeThread->run("MPPThread");
 }
 
 ExynosMPP::~ExynosMPP()
